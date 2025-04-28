@@ -4,7 +4,7 @@
 @plugin '@tailwindcss/forms';
 
 
-@theme "daisyui" {
+@plugin "daisyui" {
   /* Her tilføjes theme variable // tokens */
   themes:light:
 }
