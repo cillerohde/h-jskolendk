@@ -1,12 +1,44 @@
 ---
+
 ---
+
 <div>
-<h1>HÖJSKOLENDK</h1>
-   <div class="right-section">
-                <ul class="top-menu">
-                    <li><a href="index.html">Priser</a></li>
-                    <li><a href="index.html">Infomøder</a></li>
-                    <li><a href="index.html">Tilmeld</a></li>
-                </ul>
-            </div>
+  <h1>HÖJSKOLENDK</h1>
+  <div class="right-section">
+    <ul class="top-menu">
+      <li><a href="index.html">Priser</a></li>
+      <li><a href="index.html">Infomøder</a></li>
+      <li><a href="index.html">Tilmeld</a></li>
+    </ul>
+  </div>
+</div>
+
+<div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full">
+  <header id="navbar" class="flex flex-row justify-between items-center">
+    <div id="logo" class="flex items-center gap-2">
+      <a href="/">
+        <img class="w-7 lg:w-10" src="/logo.png" alt="Logo" />
+      </a>
+      <h1>HÖJSKOLENDK</h1>
+    </div>
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-6 font-bold text-lg lg:text-xl">
+        <li><a href="/" class="">Priser</a></li>
+        <li><a href="/" class="">Infomøder</a></li>
+        <li><a href="/form" class="">Tilmeld</a></li>
+      </ul>
+    </nav>
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu" aria-expanded="showmenu" aria-label="Åbn mobilmenu">
+    <img src="/menumobil.png" alt="Menu" class="size-6" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </header>
+  <nav id="mobilmenu" class="flex flex-col content-center pt-4" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+    <ul class="flex flex-row gap-6 font-bold text-lg lg:text-xl">
+      <li><a href="/" class="">Priser</a></li>
+      <li><a href="/" class="">Infomøder</a></li>
+      <li><a href="/form" class="">Tilmeld</a></li>
+    </ul>
+  </nav>
 </div>
