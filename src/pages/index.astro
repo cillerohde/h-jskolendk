@@ -4,19 +4,16 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
+import Index from "../components/Index.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <MainLayout title="Titel">
   <article>
     <h1 class="bg-base-300">Overskrift</h1>
     <Button />
+	<Index/>
   </article>
-<div class="card bg-base-200 shadow-md p-4">
-	<Image src={thumbsup} alt="Thumbs up" class="w-16 h-16 mx-auto" />
-	<h2 class="text-lg font-bold text-center mt-4">Card Title</h2>
-	<p class="text-center mt-2">This is a description inside the card.</p>
-	<div class="text-center mt-4">
-		<Button>Click Me</Button>
-	</div>
-</div>
+
 </MainLayout>
