@@ -3,8 +3,12 @@ import Buttonprisliste from "../components/Buttonprisliste.astro";
 import Header from "./Header.astro";
 ---
 
-<article class="p-40 bg-base-200" style="background-image: url('/baggrundsbillede.png'); background-size: cover; background-position: center;">
-  <Header />
+<div class="bg-cover bg-center bg-[url('/baggrundsbillede.png')] pt-20 pb-20 min-h-screen">
+   <Header />
+
+
+<article class="p-40">
+ 
   <section class="max-w-12xl mx-auto px-0 md:px-[40px] lg:px-[10px] pt-20 md:pt-0 bg-[#ffffffa9]">
     <div class="text-center mb-10">
       <h1 class="text-base-300 text-7xl yeseva-one-regular">PRISOVERSIGT</h1>
@@ -576,3 +580,4 @@ import Header from "./Header.astro";
     </div>
   </section>
 </article>
+</div>
