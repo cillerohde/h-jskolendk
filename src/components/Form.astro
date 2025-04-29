@@ -1,11 +1,12 @@
 ---
+import Buttonprisliste from "./Buttonprisliste.astro";
 import Header from "./Header.astro";
 ---
 
 <div class="bg-cover bg-center bg-[url('/formularbillede.png')] pt-20 pb-20 min-h-screen">
   <Header />
   <div>
-    <h1 class="flex justify-center">Reservér en plads</h1>
+    <h1 class="flex justify-center text-5xl font-bold yeseva-one-regular text-neutra">Reservér en plads</h1>
   </div>
 
   <div class="bg-white/30 p-6 rounded-xl shadow-md space-y-4 max-w-xl mx-auto mt-40">
@@ -13,9 +14,12 @@ import Header from "./Header.astro";
       <label class="font-semibold">HØJSKOLEOPHOLD:</label>
       <select class="select select-bordered w-full mt-1 rounded-sm">
         <option disabled selected>Vælg ønsket destination her</option>
-        <option>Spanien</option>
-        <option>Frankrig</option>
-        <option>Danmark</option>
+        <option>Maldiverne</option>
+        <option>Australien</option>
+        <option>Brasilien</option>
+          <option>Costa Rica</option>
+        <option>Indien</option>
+        <option>Hawaii</option>
       </select>
     </div>
 
@@ -59,4 +63,5 @@ import Header from "./Header.astro";
       </div>
     </div>
   </div>
+   <Buttonprisliste />
 </div>
