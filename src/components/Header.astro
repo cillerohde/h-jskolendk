@@ -5,35 +5,6 @@ import Prisliste from "../components/Prisliste.astro";
 
 <div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full">
   <header id="navbar" class="flex flex-row justify-between items-center">
-    <div id="logo" class="flex items-center gap-2">
-      <a href="/">
-        <img class="w-7 lg:w-10" src="/logo.png" alt="Logo" />
-      </a>
-      <h1 class="yeseva-one-regular font-bold text-7xl">HÖJSKOLENDK</h1>
-    </div>
-    <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex flex-row gap-6 font-bold text-lg lg:text-xl">
-        <li><a href="/prisliste" class="noto-sans-200">Priser</a></li>
-        <li><a href="/" class="noto-sans-200">Infomøder</a></li>
-        <li><a href="/form" class="noto-sans-200">Tilmeld</a></li>
-      </ul>
-    </nav>
-    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu" :aria-expanded="showmenu.toString()" aria-label="Åbn mobilmenu">
-      <img src="/menumobil.png" alt="Menu" class="size-6" />
-      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-    </button>
-  </header>
-</div>
-<nav id="mobilmenu" class="flex flex-col content-center pt-4" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
-  <ul class="flex flex-row gap-6 font-bold text-lg lg:text-xl">
-    <li><a href="/prisliste" class="noto-sans-200">Priser</a></li>
-    <li><a href="/" class="noto-sans-200">Infomøder</a></li>
-    <li><a href="/form" class="noto-sans-200">Tilmeld</a></li>
-  </ul>
-</nav>
-
-<div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full bg-base-200">
-  <header id="navbar" class="flex flex-row justify-between items-center">
     <div id="logo">
       <a href="/">
         <img class="w-100 lg:w-200" src="/logomedtekst.png" alt="Skraldespand Logo" />
@@ -52,8 +23,8 @@ import Prisliste from "../components/Prisliste.astro";
       </svg>
     </button>
   </header>
-  <nav id="mobilmenu" class="flex flex-col content-center pt-4" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
-    <ul class="text-center font-bold bg-base-200 pb-10 space-y-4">
+  <nav id="mobilmenu" class="flex flex-col content-center pt-4 mb-20" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+    <ul class="text-center font-bold pb-10 space-y-4">
       <li><a href="/prisliste" class="hover:text-base-300 transition noto-sans-200">Priser</a></li>
       <li><a href="/" class="hover:text-base-300 transition noto-sans-200">Infomøder</a></li>
       <li><a href="/form" class="hover:text-base-300 transition noto-sans-200">Tilmeld</a></li>
