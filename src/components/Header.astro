@@ -1,7 +1,6 @@
 ---
 import Form from "../components/Form.astro";
 import Prisliste from "../components/Prisliste.astro";
-
 ---
 
 <div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full">
@@ -19,10 +18,7 @@ import Prisliste from "../components/Prisliste.astro";
         <li><a href="/form" class="noto-sans-200">Tilmeld</a></li>
       </ul>
     </nav>
-
-
-    
-    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu" aria-expanded="showmenu" aria-label="Åbn mobilmenu">
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu" :aria-expanded="showmenu.toString()" aria-label="Åbn mobilmenu">
       <img src="/menumobil.png" alt="Menu" class="size-6" />
       <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </button>
@@ -35,3 +31,32 @@ import Prisliste from "../components/Prisliste.astro";
     <li><a href="/form" class="noto-sans-200">Tilmeld</a></li>
   </ul>
 </nav>
+
+<div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full bg-base-200">
+  <header id="navbar" class="flex flex-row justify-between items-center">
+    <div id="logo">
+      <a href="/">
+        <img class="w-100 lg:w-200" src="/logomedtekst.png" alt="Skraldespand Logo" />
+      </a>
+    </div>
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-6 font-bold text-lg lg:text-xl">
+        <li><a href="/prisliste" class="hover:text-base-300 transition noto-sans-200">Priser</a></li>
+        <li><a href="/" class="hover:text-base-300 transition noto-sans-200">Infomøder</a></li>
+        <li><a href="/form" class="hover:text-base-300 transition noto-sans-200">Tilmeld</a></li>
+      </ul>
+    </nav>
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = !showmenu" aria-expanded="showmenu" aria-label="Åbn mobilmenu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </header>
+  <nav id="mobilmenu" class="flex flex-col content-center pt-4" x-show="showmenu" x-transition x-on:click.outside="showmenu = false">
+    <ul class="text-center font-bold bg-base-200 pb-10 space-y-4">
+      <li><a href="/prisliste" class="hover:text-base-300 transition noto-sans-200">Priser</a></li>
+      <li><a href="/" class="hover:text-base-300 transition noto-sans-200">Infomøder</a></li>
+      <li><a href="/form" class="hover:text-base-300 transition noto-sans-200">Tilmeld</a></li>
+    </ul>
+  </nav>
+</div>
